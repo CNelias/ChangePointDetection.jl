@@ -1,5 +1,8 @@
 using Test
 using EditDistance
 
-@test Levenshtein("sunday","saturday") == 3
-@test DamerauLevenshtein("sunday","saturday") == 3
+a = [float(i) for i in [1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3]]
+b = [float(i) for i in [2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4]]
+
+@test lsdd(a,b) == 0.912753
+
