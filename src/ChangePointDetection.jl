@@ -143,12 +143,5 @@ function getdiff(ts; window = 150)
     return diff
 end
 
-a,b = rand(500),1.5*rand(500)
-
-a = [float(i) for i in [1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3]]
-b = [float(i) for i in [2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4]]
-
-@time print(lsdd(a,b))
-
 export squared_distance, lsdd
 end
