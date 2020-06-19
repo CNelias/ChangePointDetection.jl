@@ -168,17 +168,5 @@ function getpoints(profile; threshold = 0.9)
     return points
 end
 
-using Plots
-ts1 = rand(500)
-ts2 = 2*rand(500) .+ 1
-ts = vcat(ts1, ts2)
-profile = lsdd_profile(ts; window = 30)
-points = getpoints(profile)
-a = plot(ts)
-plot!(a, profile)
-vline!(points)
-
-display(a)
-
 export squared_distance, lsdd
 end
