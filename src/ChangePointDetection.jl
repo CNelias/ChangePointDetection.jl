@@ -168,5 +168,5 @@ function getpoints(profile; threshold = 0.9)
     return points
 end
 
-export squared_distance, lsdd
+export squared_distance, lsdd, lsdd_profile, changepoints
 end
