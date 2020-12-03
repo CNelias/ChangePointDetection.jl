@@ -34,7 +34,7 @@ lsdd_profile(ts; window = 70)
        window : the size of the sliding windows used for the lsdd computation. Bigger windows will be more accurate but can rapidly become very cumputationally expensive.
   Returns : lsdd profile of the input time-series. Note that since we are using 2 sliding windows, only time steps [1:end-2*window] are actually taken in account.  
 ```
-Finally, to run an automatized changepoint detection, you can use the ```(ts; threshold = 0.5, window = 150)``` function.
+Finally, to run an automatized changepoint detection, you can use the ```changepoints(ts; threshold = 0.5, window = 150)``` function.
 ```
 Input
     ts : time-series to analyse
