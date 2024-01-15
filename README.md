@@ -3,12 +3,14 @@
 
 A fast Julia implementation of the least square density difference (LSDD) method. It is used to detect changepoints in time-series or to infer wether or not two time-series come from the same underlying probability distribution. The LSDD method was developped in the article *Density-difference estimation* from *M. Sugiyama, T. Suzuki, T. Kanamori, M. C. du Plessis, S. Liu, and I. Takeuchi.* in 2013.
 
-Given two time-series <img src="https://render.githubusercontent.com/render/math?math=x_{1}(t)"> and <img src="https://render.githubusercontent.com/render/math?math=x_{2}(t)"> produced by underlying probability densities <img src="https://render.githubusercontent.com/render/math?math=p_{1}(x)"> and <img src="https://render.githubusercontent.com/render/math?math=p_{2}(x)">, the LSDD method directly modelizes the difference <img src="https://render.githubusercontent.com/render/math?math=g(x) = p_{1}(x) - p_{2}(x)"> to compute its L2 norm. This approach has good convergence properties and is more accurate than computing the KL-divergence of <img src="https://render.githubusercontent.com/render/math?math=p_{1}(x)"> and <img src="https://render.githubusercontent.com/render/math?math=p_{2}(x)"> after estimating them from scratch.
 
-In practice, the closer the LSDD value is to 0, the more similar <img src="https://render.githubusercontent.com/render/math?math=p_{1}(x)"> and <img src="https://render.githubusercontent.com/render/math?math=p_{2}(x)"> are. To estimate changepoints in a time-series, two sliding windows are used. The LSDD value of these two sliding windows is computed along the whole time-series. Spikes in the obtained LSDD "profile" indicate potential changepoints. The procedure is best understood graphically :
+
+Given two time-series $x_{1}(t)$ and $x_{2}(t)$ produced by underlying probability densities $p_{1}(x)$ and $p_{2}(x)$ the LSDD method directly modelizes the difference $g(x) = p_{1}(x) - p_{2}(x)$ to compute its $L2$ norm. This approach has good convergence properties and is more accurate than computing the KL-divergence of $p_{1}(x)$ and $p_{2}(x)$ after estimating them from scratch.
+
+In practice, the closer the LSDD value is to 0, the more similar $p_{1}(x)$ and $p_{2}(x)$ are. To estimate changepoints in a time-series, two sliding windows are used. The LSDD value of these two sliding windows is computed along the whole time-series. Spikes in the obtained LSDD "profile" indicate potential changepoints. The procedure is best understood graphically :
 
 <p align="center">
-  <img width="600" height="300" src="https://user-images.githubusercontent.com/34754896/85131911-1052dc80-b238-11ea-9e36-31d33a2fbd48.png">
+  <img width="600" height="300" src="https://github.com/CNelias/ChangePointDetection.jl/assets/34754896/2fd26b6b-e465-4dbe-8c2d-f2e844946fd6">
 </p>
 
 One ends up with a time-dependant LSDD "profile", and threshold can be set to detect changepoints when exceeded.
